@@ -7,6 +7,7 @@ nav.addEventListener('dblclick', event => {
 //                  2
 nav.addEventListener('click', event => {
     event.target.style.color = "#212529";
+    event.target.preventDefault();
 })
 //                  3 (not working)
 // let signupBtns = document.querySelectorAll('.btn');
@@ -32,14 +33,16 @@ botBoatImg.addEventListener('load', event => {
 });
 //                  6
 let footerP = document.querySelector('.footer p');
-footerP.addEventListener('mouseover', event => {
-    event.target.style.fontSize = '1.5rem';
+footerP.addEventListener('mouseenter', event => {
+    event.target.style.fontSize = '2rem';
+});
+footerP.addEventListener('mouseleave', event => {
+    event.target.style.fontSize = '1.6rem';
 });
 //                  7
 let body = document.querySelector('body')
 body.addEventListener('keydown', event => {
     event.target.style.backgroundColor = "purple";
-    
 });
 //                  8
 let logoH1 = document.querySelector('h1');
@@ -58,9 +61,14 @@ let boo = document.getElementById('boo');
 homeLink.addEventListener('click', event => {
     alert("are you sure?");
     scaryImg.style.display = "block";
-    boo.style.display = "absolute";
+    boo.style.display = "fixed";
 });
 scaryImg.addEventListener('dblclick', enter => {
     scaryImg.style.display = "none";
     boo.style.display = "none";
-})
+});
+// prevent default 
+// let otherLinks = document.querySelectorAll('.prevent');
+// otherLinks.addEventListener('click', event => {
+//     .preventDefault();
+// })
