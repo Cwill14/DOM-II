@@ -6,18 +6,21 @@ nav.addEventListener('dblclick', event => {
 });
 //                  2
 nav.addEventListener('click', event => {
+    event.preventDefault();
     event.target.style.color = "#212529";
-    event.target.preventDefault();
 })
 //                  3 (not working)
-// let signupBtns = document.querySelectorAll('.btn');
-// for(let i = 0; i < signupBtns.length; i++) {
-//     event.target[i].addEventListener('mouseover', event => {
-//         event.target[i].style.transform = "scale(1.15)";
-//     });
-// };
+let signupBtns = document.querySelectorAll('.btn');
+for(let i = 0; i < signupBtns.length; i++) {
+    signupBtns[i].addEventListener('mouseover', event => {
+        event.target.style.transform = "scale(1.15)";
+    });
+};
 
-// signupBtn.addEventListener('mouseover', event => {
+
+
+
+// signupBtns.addEventListener('mouseover', event => {
 //     event.target.style('transform', 'scale(1.15)');
 // });
 
