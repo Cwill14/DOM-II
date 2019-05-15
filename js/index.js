@@ -66,12 +66,16 @@ homeLink.addEventListener('click', event => {
     scaryImg.style.display = "block";
     boo.style.display = "fixed";
 });
-scaryImg.addEventListener('dblclick', enter => {
+scaryImg.addEventListener('dblclick', event => {
     scaryImg.style.display = "none";
     boo.style.display = "none";
 });
-// prevent default 
-// let otherLinks = document.querySelectorAll('.prevent');
-// otherLinks.addEventListener('click', event => {
-//     .preventDefault();
-// })
+let advTextContent = document.querySelector('inverse-content .text-content');
+advTextContent.addEventListener('click', event => {
+    event.target.style.backgroundColor = "yellow";
+});
+let advAwaits = document.querySelector('.inverse-content .text-content h2');
+advAwaits.addEventListener('click', event => {
+    event.target.style.backgroundColor = "orange";
+    event.stopPropagation();
+});
